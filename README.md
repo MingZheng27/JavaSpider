@@ -17,4 +17,5 @@ getAllChildTopics();  //用于获取子话题id</pre>
 若您希望爬取速度更快那么可以修改线程池的大小：  
 <pre>
 ExecutorService exec = Executors.newFixedThreadPool(2);</pre>
-**爬取过快或造成ip被封，可使用代理用不同的ip进行爬取**
+**爬取过快或造成ip被封，可使用代理用不同的ip进行爬取**  
+**[具体写作思路详见](http://www.jianshu.com/p/28a9bd3365c7)**
