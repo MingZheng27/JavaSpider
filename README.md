@@ -4,8 +4,8 @@
 第一次运行：  
 在cmd中cd到项目目录下运行
 <pre>
-source 工作目录/sql/createtable.sql
-source 工作目录/sql/QAtable.sql</pre>
+source /工作目录/sql/createtable.sql
+source /工作目录/sql/QAtable.sql</pre>
 来建立数据库表
 <pre>
 getTopicId(); //用于获取主话题id
