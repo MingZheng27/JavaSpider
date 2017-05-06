@@ -18,13 +18,17 @@ public class JDBCUtil {
 
 	public static Connection getConn(){
 		if (conn == null){
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				conn = (Connection) DriverManager.getConnection(url, username, password);
-				conn.setEncoding("UTF-8");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			synchronized (JDBCUtil.class) {
+				if (conn == null){
+					try {
+						Class.forName("com.mysql.jdbc.Driver");
+						conn = (Connection) DriverManager.getConnection(url, username, password);
+						conn.setEncoding("UTF-8");
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 		return conn;
