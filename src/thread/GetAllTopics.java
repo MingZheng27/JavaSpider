@@ -20,15 +20,7 @@ public class GetAllTopics implements Runnable{
 	//getChildTopics(main_topic_id,conn);
 	@Override
 	public void run() {
-		Lock lock = new ReentrantLock();
-		try{
-			lock.lock();
-			GetTopicId.getChildTopics(main_topic_id, conn);
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			lock.unlock();
-		}
+		GetTopicId.getChildTopics(main_topic_id, conn);
 	}
 
 }

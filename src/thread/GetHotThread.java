@@ -15,16 +15,7 @@ public class GetHotThread implements Runnable{
 
 	@Override
 	public void run() {
-		Lock lock = new ReentrantLock();
-		try{
-			lock.lock();
-			GetTopicId.loadOneTopicHotQA(child_topic_id);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally{
-			lock.unlock();
-		}
+		GetTopicId.loadOneTopicHotQA(child_topic_id);
 	}
 
 }
