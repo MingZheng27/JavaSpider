@@ -18,7 +18,7 @@ public class DaoImpl implements Dao{
 
 	@Override
 	public void save(HotQA qa,int child_topic_id) {
-		String sql = "insert into question_and_answer values(null,?,?,?,?,?)";
+		String sql = "insert into question_and_answer values(null,?,?,?,?,?,?,?)";
 		PreparedStatement state = null;
 		try {
 			state = (PreparedStatement) conn.prepareStatement(sql);
@@ -27,6 +27,8 @@ public class DaoImpl implements Dao{
 			state.setString(3, qa.getQuestion_name());
 			state.setInt(4, qa.getAnswer_id());
 			state.setString(5, qa.getUsername());
+			state.setString(6, qa.getExcerpt());
+			state.setBoolean(7, qa.isArticle());
 			state.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -44,7 +46,7 @@ public class DaoImpl implements Dao{
 			HotQA qa = null;
 			if (rs.next()){
 				qa = new HotQA(rs.getInt("child_topic_id"),rs.getInt("question_id"),rs.getString("question_name"),
-						rs.getInt("answer_id"),rs.getString("username"));
+						rs.getInt("answer_id"),rs.getString("username"),rs.getString("content"),rs.getBoolean("is_article"));
 				qa.setId(rs.getInt("id"));
 			}
 			return qa;
@@ -65,7 +67,7 @@ public class DaoImpl implements Dao{
 			ResultSet rs = state.executeQuery();
 			while (rs.next()){
 				HotQA qa = new HotQA(rs.getInt("child_topic_id"),rs.getInt("question_id"),rs.getString("question_name"),
-						rs.getInt("answer_id"),rs.getString("username"));
+						rs.getInt("answer_id"),rs.getString("username"),rs.getString("content"),rs.getBoolean("is_article"));
 				list.add(qa);
 			}
 		} catch (SQLException e) {

@@ -6,8 +6,10 @@ public class HotQA {
 	private int child_topic_id;
 	private int question_id;
 	private String question_name;
-	private int answer_id;
+	private int answer_id;	//default is -1
 	private String username;
+	private String excerpt;
+	private boolean isArticle;
 	
 	public HotQA() {
 		// TODO Auto-generated constructor stub
@@ -22,6 +24,15 @@ public class HotQA {
 		this.username = username;
 	}
 
+	public HotQA(int child_topic_id, int question_id, String question_name, int answer_id, String username, String excerpt, boolean isArticle) {
+		this.child_topic_id = child_topic_id;
+		this.question_id = question_id;
+		this.question_name = question_name;
+		this.answer_id = answer_id;
+		this.username = username;
+		this.excerpt = excerpt;
+		this.isArticle = isArticle;
+	}
 
 	public int getId() {
 		return id;
@@ -69,5 +80,21 @@ public class HotQA {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getExcerpt() {
+		return excerpt;
+	}
+
+	public void setExcerpt(String excerpt) {
+		this.excerpt = excerpt;
+	}
+
+	public boolean isArticle() {
+		return isArticle;
+	}
+
+	public void setArticle(boolean article) {
+		isArticle = article;
 	}
 }

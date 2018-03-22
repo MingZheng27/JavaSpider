@@ -15,7 +15,11 @@ public class GetHotThread implements Runnable{
 
 	@Override
 	public void run() {
-		GetTopicId.loadOneTopicHotQA(child_topic_id);
+		try {
+			GetTopicId.loadOneTopicHotQA(child_topic_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

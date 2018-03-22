@@ -7,7 +7,7 @@ import com.mysql.jdbc.Connection;
 public class JDBCUtil {
 
 	public static Connection conn = null;
-	public static final String url = "jdbc:mysql://localhost:3306/spider";
+	public static final String url = "jdbc:mysql://localhost:3306/spider_v0_1";
 	public static final String username = "root";
 	public static final String password = "123456";
 

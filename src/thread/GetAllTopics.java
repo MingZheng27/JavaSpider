@@ -20,7 +20,11 @@ public class GetAllTopics implements Runnable{
 	//getChildTopics(main_topic_id,conn);
 	@Override
 	public void run() {
-		GetTopicId.getChildTopics(main_topic_id, conn);
+		try {
+			GetTopicId.getChildTopics(main_topic_id, conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
