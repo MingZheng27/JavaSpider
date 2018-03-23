@@ -57,7 +57,6 @@ public class LoadDetailInformationTest {
                 String questionName = questionNameMatcher.group().split("\"")[3];
                 String username = usernameMatcher.group().split("\"")[3];
                 String excerpt = excerptMatcher.group().substring(12,excerptMatcher.group().length() - 2);
-                System.out.println(excerpt);
                 HotQA hotQA = new HotQA(Integer.parseInt(childTopicId), Integer.parseInt(questionId), questionName, -1, username, excerpt, false);
                 if (typeAndQuestionId.contains("question")) {
                     answerIdMatcher.find();
